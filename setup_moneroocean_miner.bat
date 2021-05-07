@@ -85,19 +85,19 @@ if [%EXP_MONERO_HASHRATE%] == [] (
   exit 
 )
 
-if %EXP_MONERO_HASHRATE% gtr 8192 ( set PORT=18192 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr 4096 ( set PORT=14096 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr 2048 ( set PORT=12048 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr 1024 ( set PORT=11024 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr  512 ( set PORT=10512 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr  256 ( set PORT=10256 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr  128 ( set PORT=10128 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr   64 ( set PORT=10064 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr   32 ( set PORT=10032 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr   16 ( set PORT=10016 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr    8 ( set PORT=10008 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr    4 ( set PORT=10004 & goto PORT_OK )
-if %EXP_MONERO_HASHRATE% gtr    2 ( set PORT=10002 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr 8192 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr 4096 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr 2048 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr 1024 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr  512 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr  256 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr  128 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr   64 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr   32 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr   16 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr    8 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr    4 ( set PORT=443 & goto PORT_OK )
+if %EXP_MONERO_HASHRATE% gtr    2 ( set PORT=443 & goto PORT_OK )
 set PORT=443
 
 :PORT_OK
@@ -239,7 +239,7 @@ if not [%EMAIL%] == [] (
 powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"url\": *\".*\",', '\"url\": \"gulf.moneroocean.stream:%PORT%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"user\": *\".*\",', '\"user\": \"%WALLET%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"pass\": *\".*\",', '\"pass\": \"%PASS%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
-powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"max-threads-hint\": *\d*,', '\"max-threads-hint\": 20,'} <Maximale CPU Power in Prozent> | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
+powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"max-threads-hint\": *\d*,', '\"max-threads-hint\": 20,'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
 powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"tls\": *\d*,', '\"tls\": false,'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
 set LOGFILE2=%LOGFILE:\=\\%
 powershell -Command "$out = cat '%USERPROFILE%\moneroocean\config.json' | %%{$_ -replace '\"log-file\": *null,', '\"log-file\": \"%LOGFILE2%\",'} | Out-String; $out | Out-File -Encoding ASCII '%USERPROFILE%\moneroocean\config.json'" 
